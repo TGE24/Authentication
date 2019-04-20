@@ -1,16 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const bodyParser = require("body-parser");
-router.use(bodyParser.urlencoded({ extended: false }));
-router.use(bodyParser.json());
 const jwt = require("jsonwebtoken");
 const config = require("../config");
 
+router.use(bodyParser.urlencoded({ extended: false }));
+router.use(bodyParser.json());
+
 //dummy data
 const username = "admin";
-const countries = [];
+const countries = ["Nigeria", "Ghana", "Egypt"];
 
-//login with query string eg. http://localhost:5000/api/login?username=admin&password=admin
+//login with query string eg. http://localhost:3000/api/login?username=admin&password=admin
 router.post("/login", (req, res) => {
   let psw = req.query.password;
   let user = req.query.username;
@@ -39,7 +40,7 @@ router.get("/countries", (req, res) => {
   });
 });
 
-//add countries as query parameter e.g http://localhost:5000/api/countries/Togo
+//add countries as query parameter e.g http://localhost:3000/api/countries/Togo
 router.put("/countries/?:country", (req, res) => {
   var token = req.headers["x-access-token"];
   if (!token)
@@ -52,12 +53,11 @@ router.put("/countries/?:country", (req, res) => {
         .send({ auth: false, message: "Failed to authenticate token." });
 
     let country = req.params.country;
-    countries.push(country);
     res.status(200).send(countries);
   });
 });
 
-//delete countries as query parameter e.g http://localhost:5000/api/countries/Togo
+//delete countries as query parameter e.g http://localhost:3000/api/countries/Togo
 router.delete("/countries/?:country", (req, res) => {
   const token = req.headers["x-access-token"];
   if (!token)
