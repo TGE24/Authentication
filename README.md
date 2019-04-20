@@ -2,8 +2,8 @@
 
 ## Setting up the project
 
-* Install npm modules in your main directory by running npm install.
-* Run your app - npm start.
+* Install npm modules in your main directory by running `npm install`.
+* Run your app - `npm start`.
 
 ## Test app With Postman or Insomnia via the following RESTful Endpoints
 
