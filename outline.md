@@ -14,14 +14,15 @@ Get familiar with what we are building in the course of the tutorial
 * Creating a basic NodeJs Server With `ExpressJS`
 
 ## Core App Functionalities
+
+### Implementing JWT on login Route
+ Return Token after successful login
+
 ### Creating Endpoints
  Get Requests
  Post Requests
  Put Requests
  Delete Requests
-
-### Implementing JWT on login Route
- Return Token after successful login
 
 ## Testing the app
 * Test all routes on PostMan or Insomnia
