@@ -53,6 +53,7 @@ router.put("/countries/?:country", (req, res) => {
         .send({ auth: false, message: "Failed to authenticate token." });
 
     let country = req.params.country;
+    countries.push(country);
     res.status(200).send(countries);
   });
 });
