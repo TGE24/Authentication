@@ -29,4 +29,3 @@ Get familiar with what we are building in the course of the tutorial
 
 ## Conclusion
 * Quick Recap on what was learnt
-* Othe Methods of RESTful API security-
